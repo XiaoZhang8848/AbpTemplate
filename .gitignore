@@ -1,8 +1,8 @@
 # Build and Object Folders
 bin/
 obj/
-.vs/
-.vscode/
+.vs
+.vscode
 
 # Nuget packages directory
 packages/

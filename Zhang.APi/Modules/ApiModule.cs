@@ -16,15 +16,25 @@ namespace Zhang.APi.Modules;
     typeof(InfrastractureModule)
 )]
 [DependsOn(
-    typeof(SwaggerModule)
+    typeof(SwaggerModule),
+    typeof(JwtModule),
+    typeof(LogModule)
 )]
 public class ApiModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         var services = context.Services;
+
         services.AddControllers();
+
         services.AddEndpointsApiExplorer();
+
+        services.AddCors(opts => opts.AddPolicy("any", x =>
+            x.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
+        ));
+
+        services.AddMemoryCache();
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)
@@ -33,7 +43,11 @@ public class ApiModule : AbpModule
 
         app.UseHttpsRedirection();
 
+        app.UseAuthentication();
+
         app.UseAuthorization();
+
+        app.UseCors("any");
 
         app.MapControllers();
 

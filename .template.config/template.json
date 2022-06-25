@@ -1,15 +1,13 @@
 {
   "author": "XiaoZhang",
-  "classifications": [
-    "WebAPI"
-  ],
-  "name": Zhang
-  "identity": Zhang
-  "shortName": Zhang
+  "classifications": ["WebAPI" ],
+  "name": "Zhang",
+  "identity": "Zhang",
+  "shortName": "Zhang",
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "sourceName": Zhang
+  "sourceName": "Zhang",
   "preferNameDirectory": true
 }

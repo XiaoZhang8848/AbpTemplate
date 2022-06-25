@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.AspNetCore.Mvc;
-using Zhang.APi.Bases;
+using Zhang.APi.Dtos;
 
 namespace Zhang.APi.Controllers;
 
@@ -10,18 +10,18 @@ namespace Zhang.APi.Controllers;
 [ApiController]
 public class BaseController : AbpControllerBase
 {
-    protected ResultDto<T> Success<T>(T data)
+    protected ResultDto Success()
     {
-        return new ResultDto<T>(true, "响应成功", data);
+        return new ResultDto(true, "响应成功", true);
     }
 
-    protected ResultDto<bool> Success()
+    protected ResultDto Success(dynamic data)
     {
-        return new ResultDto<bool>(true, "响应成功", true);
+        return new ResultDto(true, "响应成功", data);
     }
 
-    protected ResultDto<bool> Fail(string message)
+    protected ResultDto Fail(string message)
     {
-        return new ResultDto<bool>(false, message, false);
+        return new ResultDto(false, message, false);
     }
 }

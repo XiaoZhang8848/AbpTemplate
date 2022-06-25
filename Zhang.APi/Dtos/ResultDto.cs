@@ -1,8 +1,8 @@
-﻿namespace Zhang.APi.Bases;
+﻿namespace Zhang.APi.Dtos;
 
-public class ResultDto<T>
+public class ResultDto
 {
-    public ResultDto(bool status, string message, T? data)
+    public ResultDto(bool status, string message, dynamic? data)
     {
         Status = status;
         Message = message;
@@ -11,5 +11,5 @@ public class ResultDto<T>
 
     public bool Status { get; set; }
     public string Message { get; set; } = null!;
-    public T? Data { get; set; }
+    public dynamic? Data { get; set; }
 }

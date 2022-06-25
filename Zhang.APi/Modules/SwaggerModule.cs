@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
+using System.Reflection;
 using Volo.Abp;
 using Volo.Abp.Modularity;
 
@@ -36,6 +37,9 @@ public class SwaggerModule : AbpModule
                     new string[] {}
                 }
             });
+            // 注释
+            var api = $"{Assembly.GetEntryAssembly()!.GetName().Name}.xml";
+            opts.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, api), true);
         });
     }
 

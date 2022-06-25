@@ -9,18 +9,13 @@ namespace Zhang.APi.Modules;
 
 public class JwtModule : AbpModule
 {
-    private readonly JwtOption _jwtOptions;
-
-    public JwtModule(IOptionsSnapshot<JwtOption> jwtOptions)
-    {
-        _jwtOptions = jwtOptions.Value;
-    }
-
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         var services = context.Services;
         var config = services.GetConfiguration();
+
         Configure<JwtOption>(config.GetSection("Jwt"));
+        var jwtOption = config.GetSection("Jwt").Get<JwtOption>();
 
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opts =>
         {
@@ -32,10 +27,11 @@ public class JwtModule : AbpModule
             opts.TokenValidationParameters = new()
             {
                 ClockSkew = TimeSpan.Zero, // 缓冲时间
-                ValidIssuer = _jwtOptions.Issuer,
-                ValidAudience = _jwtOptions.Audience,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.Key))
+                ValidIssuer = jwtOption.Issuer,
+                ValidAudience = jwtOption.Audience,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOption.Key))
             };
+
             // 鉴权失败触发
             opts.Events = new JwtBearerEvents
             {

@@ -1,7 +1,7 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.IdentityModel.Tokens;
 using Zhang.APi.Options;
 
 namespace Zhang.APi.Helpers;
@@ -24,8 +24,6 @@ public class JwtHelper
 
         //5.生成Token
         var token = new JwtSecurityToken(
-            issuer: jwtOption.Issuer,
-            audience: jwtOption.Audience,
             expires: DateTime.Now.AddDays(jwtOption.Expires),
             claims: claims,
             signingCredentials: signingCredentials

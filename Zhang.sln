@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhang.APi", "Zhang.APi\Zhang.APi.csproj", "{EE7AF145-3FF0-4F2C-BA82-EBBC721980E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhang.APi", "src\Zhang.APi\Zhang.APi.csproj", "{EE7AF145-3FF0-4F2C-BA82-EBBC721980E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhang.Application", "Zhang.Application\Zhang.Application.csproj", "{17993EBF-90BC-44AB-8065-686616E3C54E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhang.Application", "src\Zhang.Application\Zhang.Application.csproj", "{17993EBF-90BC-44AB-8065-686616E3C54E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhang.Domain", "Zhang.Domain\Zhang.Domain.csproj", "{E7F9EB5D-85B4-4D9B-A696-A2FD365503A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhang.Domain", "src\Zhang.Domain\Zhang.Domain.csproj", "{E7F9EB5D-85B4-4D9B-A696-A2FD365503A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhang.Infrastracture", "Zhang.Infrastracture\Zhang.Infrastracture.csproj", "{5B61BEC1-26A2-4AC3-BD30-B3B727C5CA81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhang.Infrastracture", "src\Zhang.Infrastracture\Zhang.Infrastracture.csproj", "{5B61BEC1-26A2-4AC3-BD30-B3B727C5CA81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{041EC2A0-FF64-11EC-B8DD-79C9D6A16332}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +38,11 @@ Global
 		{5B61BEC1-26A2-4AC3-BD30-B3B727C5CA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B61BEC1-26A2-4AC3-BD30-B3B727C5CA81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B61BEC1-26A2-4AC3-BD30-B3B727C5CA81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5B61BEC1-26A2-4AC3-BD30-B3B727C5CA81} = {041EC2A0-FF64-11EC-B8DD-79C9D6A16332}
+		{E7F9EB5D-85B4-4D9B-A696-A2FD365503A2} = {041EC2A0-FF64-11EC-B8DD-79C9D6A16332}
+		{17993EBF-90BC-44AB-8065-686616E3C54E} = {041EC2A0-FF64-11EC-B8DD-79C9D6A16332}
+		{EE7AF145-3FF0-4F2C-BA82-EBBC721980E4} = {041EC2A0-FF64-11EC-B8DD-79C9D6A16332}
 	EndGlobalSection
 EndGlobal

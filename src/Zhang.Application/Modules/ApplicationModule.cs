@@ -1,5 +1,4 @@
-﻿using Volo.Abp;
-using Volo.Abp.Application;
+﻿using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Caching.StackExchangeRedis;
 using Volo.Abp.Modularity;

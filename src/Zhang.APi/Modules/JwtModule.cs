@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
 using Volo.Abp.Modularity;
 using Zhang.APi.Options;
 
@@ -27,8 +27,8 @@ public class JwtModule : AbpModule
             opts.TokenValidationParameters = new()
             {
                 ClockSkew = TimeSpan.Zero, // 缓冲时间
-                ValidIssuer = jwtOption.Issuer,
-                ValidAudience = jwtOption.Audience,
+                ValidateIssuer = false,
+                ValidateAudience = false,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOption.Key))
             };
 
